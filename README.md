@@ -18,16 +18,16 @@ https://demo.threatsimulator.cloud/security/settings/siem/siem-deployment-how-to
 and replace current file in tf_TAS_AWS/templates/install-siem-agent.sh
 update organizationID = "<YOUR_ORGANIZATION_ID>" field in tf_TAS_AWS/terraform.tfvars
 
-## Optional.  Install Splunk
+ ## Optional.  Install Splunk
 
 cd tf_TAS_AWS/Splunk_siem_agent
 terraform init
 
- # Deploy the infrastructure
+ ## Deploy the infrastructure
 terraform.exe apply --var-file="..\..\terraform_credentials\credentials.tfvars" --var-file="..\terraform.tfvars" --auto-approve
- # Configure and test Splunk in ThreatSim https://demo.threatsimulator.cloud/security/settings/siem
+ ## Configure and test Splunk in ThreatSim https://demo.threatsimulator.cloud/security/settings/siem
 
-## Deploy Fortigate VM and  agents in private and public subnets
+ ## Deploy Fortigate VM and  agents in private and public subnets
 
 cd tf_TAS_AWS/Fortigate_public_private_agents
 terraform init
@@ -47,15 +47,15 @@ terraform init
  # and redeploy
   terraform.exe apply --var-file="..\..\terraform_credentials\credentials.tfvars" --var-file="..\terraform.tfvars" --auto-approve
 
-## Delete infrastructure
+ ## Delete infrastructure
 cd tf_TAS_AWS/Fortigate_public_private_agents
 terraform.exe destroy --var-file="..\..\terraform_credentials\credentials.tfvars" --var-file="..\terraform.tfvars"  --force
 cd tf_TAS_AWS/Splunk_siem_agent
 terraform.exe destroy --var-file="..\..\terraform_credentials\credentials.tfvars" --var-file="..\terraform.tfvars"  --force
 
 
-License
+## License
 MIT / BSD
 
 Author Information
-Created in 2019 Gustavo AMADOR NIETO.
+Created in 2020 Gustavo AMADOR NIETO.
