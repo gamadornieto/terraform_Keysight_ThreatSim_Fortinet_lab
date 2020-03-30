@@ -41,19 +41,19 @@ terraform init
 
  Log in into FortigateVM and create an IPv4 Policy rule to allow traffic from Private subnet to Public subnet ( port2 to port1)
  See Howto_configure_Fortigate.pdf
- Once this is done use following values in ..\terraform.tfvars to start the agents in the private subnet (they need to download software from internet)
-  num_public_agents = 1
-  num_private_agents = 1
-and redeploy
+  Once this is done use following values in ..\terraform.tfvars to start the agents in the private subnet 
+  (they need to download software from internet)
+    num_public_agents = 1
+    num_private_agents = 1
+ and redeploy
   terraform.exe apply --var-file="..\..\terraform_credentials\credentials.tfvars" --var-file="..\terraform.tfvars" --auto-approve
-
+  
  ## Delete infrastructure
  
 cd tf_TAS_AWS/Fortigate_public_private_agents
 terraform.exe destroy --var-file="..\..\terraform_credentials\credentials.tfvars" --var-file="..\terraform.tfvars"  --force
 cd tf_TAS_AWS/Splunk_siem_agent
 terraform.exe destroy --var-file="..\..\terraform_credentials\credentials.tfvars" --var-file="..\terraform.tfvars"  --force
-
 
 ## License
 MIT / BSD
