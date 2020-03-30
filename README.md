@@ -51,8 +51,11 @@ terraform init
  ## Delete infrastructure
  
 cd tf_TAS_AWS/Fortigate_public_private_agents 
+
 terraform.exe destroy --var-file="..\..\terraform_credentials\credentials.tfvars" --var-file="..\terraform.tfvars"  --force 
+
 cd tf_TAS_AWS/Splunk_siem_agent 
+
 terraform.exe destroy --var-file="..\..\terraform_credentials\credentials.tfvars" --var-file="..\terraform.tfvars"  --force 
 
 ## License
