@@ -1,0 +1,5 @@
+#Deploy
+terraform.exe apply --var-file="..\terraform_credentials\terraform_gustavo.tfvars" --auto-approve
+
+#Destroy
+terraform.exe destroy --var-file="..\terraform_credentials\terraform_gustavo.tfvars" --force
