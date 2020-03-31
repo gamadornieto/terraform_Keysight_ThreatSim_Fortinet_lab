@@ -36,6 +36,7 @@ terraform init
  Use following values in ..\terraform.tfvars
  
   num_public_agents = 1
+  
   num_private_agents = 0
   
  and deploy
@@ -49,6 +50,7 @@ terraform init
   (they need to download software from internet) 
   
     num_public_agents = 1 
+    
     num_private_agents = 1 
     
  and redeploy 
